@@ -2,16 +2,36 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BoardModel {
-    private static final int ROWS = 6;
-    private static final int COLUMNS = 7;
+    private static int ROWS = 10;
+    private static int COLUMNS = 10;
     public static final Color EMPTY_COLOR = Color.WHITE;
-
+private static int winConditionCount;
     private Color[][] grid;
     private int currentPlayer = 1;
 
     public BoardModel() {
         grid = new Color[ROWS][COLUMNS];
         reset();
+    }
+
+    public  void setWinConditionCount(int winConditionCount) {
+        BoardModel.winConditionCount = winConditionCount;
+    }
+
+    public int getWinConditionCount() {
+        return winConditionCount;
+    }
+
+    public void setGrid(Color[][] grid) {
+        this.grid = grid;
+    }
+
+    public void setROWS(int ROWS) {
+        BoardModel.ROWS = ROWS;
+    }
+
+    public void setCOLUMNS(int COLUMNS) {
+        BoardModel.COLUMNS = COLUMNS;
     }
 
     public void setCurrentPlayer(int currentPlayer) {

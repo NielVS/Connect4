@@ -13,7 +13,7 @@ class ComputerPlayer extends Player {
     public void makeMove(int column, JButton[][] buttons, Color color, BoardModel board) {
         int row;
         controller = new Controller(board);
-        panel = new StartPanel(board, controller);
+        panel = new StartPanel();
         for (row = board.getRowCount() - 1; row >= 0; row--) {
             if (board.getColor(row, column) == BoardModel.EMPTY_COLOR) {
                 board.setColor(row, column, color);
@@ -23,6 +23,7 @@ class ComputerPlayer extends Player {
                     if (panel.askPlayAgain()) {
                         board.reset();
                         board.removeDisks(buttons);
+                        panel.askPlayMode();
                         return;
                     } else {
                         System.exit(0); // or some other way to exit the game

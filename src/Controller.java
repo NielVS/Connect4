@@ -47,7 +47,7 @@ public class Controller {
             count++;
         }
 
-        return count >= 4;
+        return count >= board.getWinConditionCount();
     }
 
     private boolean checkDiagonalDown(int row, int col) {
@@ -64,7 +64,7 @@ public class Controller {
             count++;
         }
 
-        return count >= 4;
+        return count >= board.getWinConditionCount();
     }
 
 
@@ -82,7 +82,7 @@ public class Controller {
             count++;
         }
 
-        return count >= 4;
+        return count >= board.getWinConditionCount();
     }
 
     private boolean check4Across(int row, int col) {
@@ -99,7 +99,7 @@ public class Controller {
             count++;
         }
 
-        return count >= 4;
+        return count >= board.getWinConditionCount();
     }
 
 
