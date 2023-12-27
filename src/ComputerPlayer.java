@@ -9,6 +9,13 @@ class ComputerPlayer extends Player {
         super();
     }
 
+    /**
+     *
+     * @param column A randomly generated column index that makes the computer play automated
+     * @param buttons the Connect# grid made out of buttons.
+     * @param color The collor the buttons will get, decided by the current player
+     * @param board The board model providing information about the board
+     */
     @Override
     public void makeMove(int column, JButton[][] buttons, Color color, BoardModel board) {
         int row;
@@ -23,10 +30,9 @@ class ComputerPlayer extends Player {
                     if (panel.askPlayAgain()) {
                         board.reset();
                         board.removeDisks(buttons);
-                        panel.askPlayMode();
                         return;
                     } else {
-                        System.exit(0); // or some other way to exit the game
+                        System.exit(0);
                     }
                 } else if (board.isFull()) {
                     updateBoard(column, row, buttons, board);
@@ -36,7 +42,7 @@ class ComputerPlayer extends Player {
                         board.removeDisks(buttons);
                         return;
                     } else {
-                        System.exit(0); // or some other way to exit the game
+                        System.exit(0);
                     }
                 } else {
                     board.switchPlayer();
@@ -44,7 +50,7 @@ class ComputerPlayer extends Player {
                 break;
             }
         }
-        if (row < 0) {
+        if (row < 0) { //This makes sure that the Computer wont select a column that is full
             controller.computerMakesMove(buttons);
         } else {
 

@@ -9,6 +9,13 @@ class HumanPlayer extends Player {
         super();
     }
 
+    /**
+     *
+     * @param column The column that was selected via the click on ta specific button
+     * @param buttons the Connect# grid made out of buttons.
+     * @param color The collor the buttons will get, decided by the current player
+     * @param board The board model providing information about the board
+     */
     @Override
     public void makeMove(int column, JButton[][] buttons, Color color, BoardModel board) {
         int row;
@@ -21,11 +28,11 @@ class HumanPlayer extends Player {
                     updateBoard(column, row, buttons, board);
                     panel.showWinnerMessage();
                     if (panel.askPlayAgain()) {
-                         board.reset();
+                        board.reset();
                         board.removeDisks(buttons);
                         return;
                     } else {
-                        System.exit(0); // or some other way to exit the game
+                        System.exit(0);
                     }
                 } else if (board.isFull()) {
                     updateBoard(column, row, buttons, board);

@@ -5,7 +5,7 @@ public class BoardModel {
     private static int ROWS = 10;
     private static int COLUMNS = 10;
     public static final Color EMPTY_COLOR = Color.WHITE;
-private static int winConditionCount;
+    private static int winConditionCount;
     private Color[][] grid;
     private int currentPlayer = 1;
 
@@ -14,16 +14,12 @@ private static int winConditionCount;
         reset();
     }
 
-    public  void setWinConditionCount(int winConditionCount) {
+    public void setWinConditionCount(int winConditionCount) {
         BoardModel.winConditionCount = winConditionCount;
     }
 
     public int getWinConditionCount() {
         return winConditionCount;
-    }
-
-    public void setGrid(Color[][] grid) {
-        this.grid = grid;
     }
 
     public void setROWS(int ROWS) {
@@ -46,7 +42,8 @@ private static int winConditionCount;
         }
         currentPlayer = 1;
     }
-    public void removeDisks(JButton[][] buttons){
+
+    public void removeDisks(JButton[][] buttons) {
         for (int row = 0; row < ROWS; row++) {
             for (int col = 0; col < COLUMNS; col++) {
                 buttons[row][col].setBackground(EMPTY_COLOR);
@@ -85,6 +82,6 @@ private static int winConditionCount;
 
     public void switchPlayer() {
         int count = 3;
-        setCurrentPlayer(count-currentPlayer);
+        setCurrentPlayer(count - currentPlayer);
     }
 }

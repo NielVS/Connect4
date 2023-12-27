@@ -66,10 +66,6 @@ public class StartPanel extends JPanel {
         setLayout(new GridLayout(board.getRowCount(), board.getColumnCount()));
 
     }
-    public void resetPanel(){
-        removeAll();
-        updateUI();
-    }
 }
 
 
